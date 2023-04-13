@@ -1,10 +1,12 @@
 import React from 'react'
-import Navbar from '../Components/Navbar'
+import NavbarDesktop from '../Components/NavbarDesktop'
+import NavbarMobile from '../Components/NavbarMobile'
 import Footer from '../Components/Footer'
 export default function Home() {
   return (
     <div>
-      <Navbar />
+      <NavbarDesktop />
+      <NavbarMobile />
       
       <Footer/>
     </div>
