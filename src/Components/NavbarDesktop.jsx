@@ -14,7 +14,7 @@ export default function Navbar() {
           </ul>
         </div>
         <div>
-          <button className="bg-mamanpaz text-white rounded-lg py-2 px-5 font-bold">ورود / ثبت نام</button>
+          <button className="bg-mamanpaz text-white outline-0 rounded-lg py-2 px-5 font-bold">ورود / ثبت نام</button>
         </div>
       </div>
 
