@@ -2,6 +2,7 @@ import React from "react";
 import NavbarDesktop from "./NavbarDesktop";
 import NavbarMobile from "./NavbarMobile";
 import { IoMdArrowDropdown } from "react-icons/io";
+import Button from "./Button";
 
 export default function Header() {
   return (
@@ -9,7 +10,7 @@ export default function Header() {
       <NavbarDesktop />
       <NavbarMobile />
 
-      <div className="container  mt-[70px]  mb-28 px-2">
+      <div className="container  mt-[70px]  mb-16 px-2">
         <div className="flex flex-col justify-center items-center md:flex-row md:justify-between">
           <div className="md:order-1">
             <img
@@ -25,9 +26,8 @@ export default function Header() {
               مامان‌پز با غذاهای خانگی و سالم یک ناهار کاری فراموش نشدنی را برای
               شما رقم می‌زند.
             </p>
-            <button className="bg-mamanpaz font-bold outline-0 text-white p-3 w-64 rounded-xl">
-              نهار شرکتی میخوام
-            </button>
+            <Button text="نهار شرکتی میخوام"/>
+            
           </div>
         </div>
         <div className=" border-b-4 relative pt-20 flex items-center justify-center">
