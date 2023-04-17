@@ -3,19 +3,36 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "VazirFont";
-    src: url("../public/Fonts/Vazirmatn-Regular.ttf") format('truetype') ;
-    /* src: url("../public/Fonts/Vazirmatn-Medium.ttf") format('truetype') ; */
+  font-family: "VazirFont";
+  src: url("../public/Fonts/Vazirmatn-Regular.ttf") format("truetype");
+  /* src: url("../public/Fonts/Vazirmatn-Medium.ttf") format('truetype') ; */
 }
 
-html{
-    height: 100%;
+html {
+  height: 100%;
 }
 
-body{
-    position: relative;
-    min-height: 100%;
-    padding-bottom: 200px;
+body {
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 200px;
+}
+
+.swiper-pagination-bullet-active {
+    background-color:  #ff5851 !important;
 }
 
 
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #cbd5e1;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #ff5851;
+  border-radius: 14px;
+}

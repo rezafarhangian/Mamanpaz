@@ -18,7 +18,7 @@ export default function NavbarMobile() {
 
   return (
     <>
-      <div className=" md:hidden fixed top-0 h-[70px] z-50 right-0 left-0 bg-white shadow ">
+      <div className=" md:hidden fixed top-0 h-[70px] z-30 right-0 left-0 bg-white shadow ">
         <div>
           <div className="container p-4 flex items-center justify-between">
             <div className="flex items-center justify-center">
@@ -44,7 +44,7 @@ export default function NavbarMobile() {
           showMenu
             ? "top-0 right-0 bottom-0 left-0"
             : "top-0 right-0 bottom-0 left-[1500px]"
-        }  z-20 fixed `}
+        }  z-40 fixed `}
       ></div>
       {/*end Shadow under the side menu */}
 
@@ -52,7 +52,7 @@ export default function NavbarMobile() {
       <div
         className={`fixed top-0 ${
           showMenu ? "right-0" : "-right-80"
-        } md:hidden transition-all duration-300 ease-in-out  bottom-0   z-30 bg-white  h-full w-56 overflow-y-auto`}
+        } md:hidden transition-all duration-300 ease-in-out  bottom-0  z-50  bg-white  h-full w-56 overflow-y-auto`}
       >
         <div className="flex items-center justify-between p-4 border-b-[1px]">
           <img

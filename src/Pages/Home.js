@@ -4,6 +4,7 @@ import Header from '../Components/Header'
 import HowToOrder from '../Containers/HowToOrder'
 import OurCustomers from '../Containers/OurCustomers'
 import Introduction from '../Containers/Introduction'
+import CustomersComments from '../Containers/CustomersComments'
 export default function Home() {
   return (
     <div>
@@ -11,6 +12,7 @@ export default function Home() {
       <HowToOrder/>
       <OurCustomers/>
       <Introduction/>
+      <CustomersComments/>
       <Footer/>
     </div>
   )

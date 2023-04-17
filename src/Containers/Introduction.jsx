@@ -3,7 +3,7 @@ import IntroductionBox from "../Components/IntroductionBox";
 
 export default function Introduction() {
   return (
-    <div className="container p-2 mb-20">
+    <div className="container p-2 mb-20 ">
       <div>
         <h2 className="text-center font-bold text-xl lg:text-2xl">چرا مامان‌پز را انتخاب کنیم؟</h2>
       </div>
@@ -16,7 +16,7 @@ export default function Introduction() {
         <IntroductionBox img="./img/Introduction/merit6.png" desc="برنامه غذایی متنوع"/>
        </div>
 
-        <div className="border-b-4 max-w-[1100px] m-auto flex items-center justify-center relative">
+        <div className="border-b-4 max-w-[1100px] m-auto flex items-center justify-center relative -z-10">
                 <p className="text-mamanpaz font-semibold shadow-[rgba(0,0,0,0.19)_0px_10px_20px,_rgba(0,0,0,0.23)_0px_6px_6px] absolute p-5  bg-gray-100 rounded-full">لحظات دوست داشتنی با طعمی از خانه</p>
         </div>
     </div>
