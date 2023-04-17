@@ -2,7 +2,7 @@
 
 export default function Navbar() {
   return (
-    <div className="hidden md:block fixed top-0 right-0 left-0 bg-white shadow ">
+    <div className="hidden md:block fixed top-0 right-0 left-0 bg-white z-50  shadow">
       <div className="container flex items-center justify-between">
         <div className="flex items-center">
           <img className="w-11 mb-4" src="./img/logo-brand.png" alt="Logo-mamanpaz" />

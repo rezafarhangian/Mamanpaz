@@ -30,7 +30,7 @@ export default function Header() {
             
           </div>
         </div>
-        <div className=" border-b-4 relative pt-20 flex items-center justify-center">
+        <div className=" border-b-4 relative -z-30 pt-20 flex items-center justify-center">
           <div className="bg-gray-100 shadow absolute w-16 h-16 rounded-full flex items-center justify-center">
             <IoMdArrowDropdown className="text-4xl"/>
           </div>

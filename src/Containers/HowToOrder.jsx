@@ -4,7 +4,7 @@ import Button from "../Components/Button";
 
 export default function HowToOrder() {
   return (
-    <div className="container p-2 border-b-4 pb-10">
+    <div className="container p-2 ">
       <h2 className="text-center font-bold text-xl lg:text-2xl">
         چطور غذای شرکتی سفارش دهیم؟
       </h2>
@@ -38,7 +38,8 @@ export default function HowToOrder() {
         <div className="flex items-center justify-center mt-20">
            <Button text="اطلاعات بیشتر"/>
         </div>
-
+          
+        <div className="border-b-4 mt-20 max-w-[1100px] m-auto"></div>
     </div>
   );
 }

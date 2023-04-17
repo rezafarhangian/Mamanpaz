@@ -18,7 +18,7 @@ export default function NavbarMobile() {
 
   return (
     <>
-      <div className=" md:hidden fixed top-0 h-[70px] right-0 left-0 bg-white shadow ">
+      <div className=" md:hidden fixed top-0 h-[70px] z-50 right-0 left-0 bg-white shadow ">
         <div>
           <div className="container p-4 flex items-center justify-between">
             <div className="flex items-center justify-center">
