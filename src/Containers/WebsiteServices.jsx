@@ -4,7 +4,7 @@ import Button from "../Components/Button";
 export default function WebsiteServices() {
   const [category, setCategory] = useState("A");
   return (
-    <div className="container p-2 mb-20">
+    <div className="container p-2 mb-96 md:mb-52">
       <h2 className="text-center font-bold text-xl lg:text-2xl mb-16">
         مامان‌پز چه خدماتی دارد؟
       </h2>

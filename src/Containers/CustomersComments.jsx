@@ -13,7 +13,7 @@ export default function CustomersComments() {
       <h2 className="text-center font-bold text-xl lg:text-2xl mb-16">
         مشتریان مامان‌پز چه می‌گویند؟
       </h2>
-      <div className="m-auto  md:w-[850px]">
+      <div className="m-auto  lg:w-[850px] ">
         <Swiper
           pagination={{
             dynamicBullets: true,
@@ -24,9 +24,9 @@ export default function CustomersComments() {
           }}
           loop={true}
           modules={[Pagination, Autoplay]}
-          className="mySwiper py-4"
+          className="mySwiper"
         >
-          <SwiperSlide className=" py-10 px-4 ">
+          <SwiperSlide className=" py-10 px-2 ">
             <CustomersCommentCard
               img1="./img/CustomersComments/food1.jpeg"
               img2="./img/CustomersComments/chef1.jpeg"
@@ -35,7 +35,7 @@ export default function CustomersComments() {
               name="صبا از اقتصاد بیدار"
             />
           </SwiperSlide>
-          <SwiperSlide className=" py-10 px-4 ">
+          <SwiperSlide className=" py-10 px-2 ">
             <CustomersCommentCard
               img1="./img/CustomersComments/food2.jpeg"
               img2="./img/CustomersComments/chef2.jpeg"
@@ -44,7 +44,7 @@ export default function CustomersComments() {
               name="مهدی از تراکنش همراه ایمن"
             />
           </SwiperSlide>
-          <SwiperSlide className=" py-10 px-4 ">
+          <SwiperSlide className=" py-10 px-2 ">
             <CustomersCommentCard
               img1="./img/CustomersComments/food3.jpeg"
               img2="./img/CustomersComments/chef3.jpeg"
@@ -53,7 +53,7 @@ export default function CustomersComments() {
               name="یاسمن از توسعه ابزار بازار سرمایه"
             />
           </SwiperSlide>
-          <SwiperSlide className=" py-10 px-4 ">
+          <SwiperSlide className=" py-10 px-2 ">
             <CustomersCommentCard
               img1="./img/CustomersComments/food4.jpeg"
               img2="./img/CustomersComments/chef4.jpeg"
