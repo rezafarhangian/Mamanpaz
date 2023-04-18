@@ -5,6 +5,7 @@ import HowToOrder from '../Containers/HowToOrder'
 import OurCustomers from '../Containers/OurCustomers'
 import Introduction from '../Containers/Introduction'
 import CustomersComments from '../Containers/CustomersComments'
+import WebsiteServices from '../Containers/WebsiteServices'
 export default function Home() {
   return (
     <div>
@@ -13,6 +14,7 @@ export default function Home() {
       <OurCustomers/>
       <Introduction/>
       <CustomersComments/>
+      <WebsiteServices/>
       <Footer/>
     </div>
   )
