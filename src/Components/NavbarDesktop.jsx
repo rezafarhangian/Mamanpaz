@@ -20,7 +20,7 @@ export default function Navbar() {
                   isActive ? "text-mamanpaz" : "text-black"
                 }
               >
-                <p className=" py-6">سفاشر شرکتی</p>
+                <p className=" py-6">سفارش شرکتی</p>
               </NavLink>
             </li>
             <li className="mr-5 hover:text-mamanpaz">آشپزی در مامان پز</li>

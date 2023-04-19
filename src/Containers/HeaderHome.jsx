@@ -1,9 +1,9 @@
 import React from "react";
-import NavbarDesktop from "./NavbarDesktop";
-import NavbarMobile from "./NavbarMobile";
+import NavbarDesktop from "../Components/NavbarDesktop";
+import NavbarMobile from "../Components/NavbarMobile";
 import { IoMdArrowDropdown } from "react-icons/io";
-import Button from "./Button";
-import Border from "./Border";
+import Button from "../Components/Button";
+import Border from "../Components/Border";
 
 export default function Header() {
   return (
