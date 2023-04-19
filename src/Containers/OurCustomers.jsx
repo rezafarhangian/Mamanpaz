@@ -4,6 +4,7 @@ import "swiper/css";
 
 
 import { Autoplay } from "swiper";
+import Border from "../Components/Border";
 
 export default function OurCustomers() {
   return (
@@ -163,7 +164,10 @@ export default function OurCustomers() {
             </div>
           </SwiperSlide>
         </Swiper>
-        <div className="border-b-4 max-w-[1100px]  "></div>
+        
+        <div className="-mt-16 max-w-[1100px]  ">
+           <Border/>
+        </div>
       </div>
     </div>
   );

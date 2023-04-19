@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper";
 import { IoMdArrowDropdown } from "react-icons/io";
-
+import Border from "../Components/Border";
 
 export default function CustomersComments() {
   return (
@@ -65,11 +65,10 @@ export default function CustomersComments() {
         </Swiper>
       </div>
 
-      <div className=" border-b-4 relative -z-30 pt-20 flex items-center justify-center">
-          <div className="bg-gray-100 shadow absolute w-16 h-16 rounded-full flex items-center justify-center">
-            <IoMdArrowDropdown className="text-4xl"/>
-          </div>
-        </div>
+
+       <Border icon={true}>
+          <IoMdArrowDropdown className="text-4xl" />
+       </Border>
     </div>
   );
 }

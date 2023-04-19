@@ -3,6 +3,7 @@ import NavbarDesktop from "./NavbarDesktop";
 import NavbarMobile from "./NavbarMobile";
 import { IoMdArrowDropdown } from "react-icons/io";
 import Button from "./Button";
+import Border from "./Border";
 
 export default function Header() {
   return (
@@ -26,15 +27,13 @@ export default function Header() {
               مامان‌پز با غذاهای خانگی و سالم یک ناهار کاری فراموش نشدنی را برای
               شما رقم می‌زند.
             </p>
-            <Button text="نهار شرکتی میخوام"/>
-            
+            <Button text="نهار شرکتی میخوام" />
           </div>
         </div>
-        <div className=" border-b-4 relative -z-30 pt-20 flex items-center justify-center">
-          <div className="bg-gray-100 shadow absolute w-16 h-16 rounded-full flex items-center justify-center">
-            <IoMdArrowDropdown className="text-4xl"/>
-          </div>
-        </div>
+   
+        <Border icon="true">
+          <IoMdArrowDropdown className="text-4xl" />
+        </Border>
       </div>
     </div>
   );

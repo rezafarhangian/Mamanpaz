@@ -1,5 +1,6 @@
 import React from "react";
 import IntroductionBox from "../Components/IntroductionBox";
+import Border from "../Components/Border";
 
 export default function Introduction() {
   return (
@@ -16,9 +17,12 @@ export default function Introduction() {
         <IntroductionBox img="./img/Introduction/merit6.png" desc="برنامه غذایی متنوع"/>
        </div>
 
-        <div className="border-b-4 max-w-[1100px] m-auto flex items-center justify-center relative -z-10">
-                <p className="text-mamanpaz font-semibold shadow-[rgba(0,0,0,0.19)_0px_10px_20px,_rgba(0,0,0,0.23)_0px_6px_6px] absolute p-5  bg-gray-100 rounded-full">لحظات دوست داشتنی با طعمی از خانه</p>
+        <div className=" max-w-[1100px] m-auto -mt-16">
+          <Border icon={true}>
+                <p className="text-mamanpaz font-semibold p-2">لحظات دوست داشتنی با طعمی از خانه</p>
+          </Border>
         </div>
+      
     </div>
   );
 }

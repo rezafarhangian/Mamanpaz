@@ -1,6 +1,7 @@
 import React from "react";
 import HowToOrderCard from "../Components/HowToOrderCard";
 import Button from "../Components/Button";
+import Border from "../Components/Border";
 
 export default function HowToOrder() {
   return (
@@ -38,8 +39,10 @@ export default function HowToOrder() {
         <div className="flex items-center justify-center mt-20">
            <Button text="اطلاعات بیشتر"/>
         </div>
-          
-        <div className="border-b-4 mt-20 max-w-[1100px] m-auto"></div>
+           
+        <div className=" max-w-[1100px] m-auto">
+           <Border/>
+        </div>
     </div>
   );
 }
