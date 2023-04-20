@@ -4,6 +4,9 @@ import NavbarMobile from "../Components/NavbarMobile";
 import Input from "../Components/Input";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import Border from "../Components/Border"
+import { IoMdArrowDropdown } from "react-icons/io";
+
 
 const initialValues = {
   name: "",
@@ -80,6 +83,11 @@ export default function HeaderCompanies() {
             </div>
           </div>
         </div>
+
+        <Border icon={true}>
+        <IoMdArrowDropdown className="text-4xl" />
+
+        </Border>
       </div>
     </div>
   );
