@@ -29,7 +29,7 @@ export default function IntroductionCompany() {
           desc="سفارش رستورانی"
         />
         <IntroductionBox
-          img="./img/IntroductionCompany/merit9.png"
+          img="./img/IntroductionCompany/merit10.png"
           desc="نرم افزار شرکتی"
         />
         <IntroductionBox
