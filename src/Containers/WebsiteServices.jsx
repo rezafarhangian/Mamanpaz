@@ -33,7 +33,11 @@ export default function WebsiteServices() {
           </div>
         </div>
 
-        <div className={`${category === "B" ? "flex" : "hidden"} mt-8 flex flex-col md:flex-row gap-5 items-center justify-center md:w-[700px] md:justify-evenly m-auto`} >
+        <div
+          className={`${
+            category === "B" ? "flex" : "hidden"
+          } mt-8 flex flex-col md:flex-row gap-5 items-center justify-center md:w-[700px] md:justify-evenly  m-auto`}
+        >
           <div className="w-[269px] md:w-[300px] md:h-[220px] rounded-xl overflow-hidden ">
             <img
               className="w-full h-full"
@@ -41,7 +45,7 @@ export default function WebsiteServices() {
               alt="Photo of online shopping"
             />
           </div>
-          <div className="max-w-[270px] text-sm  text-justify flex flex-col justify-between items-center h-[225px] ">
+          <div className="max-w-[270px]  text-sm  text-justify flex flex-col justify-between  items-center h-[225px] ">
             <p className="mb-10 md:mb-8">
               شما می‌توانید از روی سایت و به طور مستقیم هم سفارش خود را از میان
               غذاهای مامان‌پز انتخاب و ثبت کنید. فقط در نظر داشته باشید که به
@@ -49,11 +53,17 @@ export default function WebsiteServices() {
               خود را سفارش دهید. هر مامان در صورتی که چهار سفارش برای غذای
               مورد‌نظر دریافت کند آن را تهیه می‌کند.
             </p>
-            <Button text="میخواهم سفارش دهم" />
+            <div>
+              <Button src="/">میخواهم سفارش دهم</Button>
+            </div>
           </div>
         </div>
 
-        <div className={`${category === "A" ? "flex" : "hidden"} mt-8 flex flex-col md:flex-row gap-5 items-center justify-center md:w-[700px] md:justify-evenly m-auto `}>
+        <div
+          className={`${
+            category === "A" ? "flex" : "hidden"
+          } mt-8 flex flex-col md:flex-row gap-5 items-center justify-center md:w-[700px] md:justify-evenly m-auto `}
+        >
           <div className="w-[269px] h-[152px] md:w-[300px] md:h-[220px] rounded-xl overflow-hidden">
             <img
               className="w-full h-full"
@@ -61,13 +71,15 @@ export default function WebsiteServices() {
               alt="Photo of online shopping"
             />
           </div>
-          <div className="max-w-[270px] text-sm  text-justify flex flex-col justify-between items-center  h-[225px] ">
-            <p className="mb-16 md:mb-8">
+          <div className="max-w-[270px]  text-sm  text-justify flex flex-col justify-between items-center   h-[225px] ">
+            <p className="mb-10 md:mb-">
               اگر شرکتی هستید که می‌خواهید برای تامین غذای روزانه کارکنان خود از
               خدمات مامان‌پز استفاده کنید، فقط کافیست اطلاعات تماس خود را با ما
               به اشتراک بگذارید تا کارشناسان مامان‌پز با شما تماس بگیرند. .
             </p>
-            <Button text="نهار شرکتی میخواهم" />
+            <div>
+              <Button src="/companies">نهار شرکتی میخواهم</Button>
+            </div>
           </div>
         </div>
       </div>

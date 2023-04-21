@@ -1,5 +1,8 @@
 import Footer from "../Components/Footer"
+import BenefitsCorporateOrder from "../Containers/BenefitsCorporateOrder"
+import ChooseMealPlan from "../Containers/ChooseMealPlan"
 import CompanySlides from "../Containers/CompanySlides"
+import CorporateOrderApplication from "../Containers/CorporateOrderApplication"
 import HeaderCompanies from "../Containers/HeaderCompanies"
 import IntroductionCompany from "../Containers/IntroductionCompany"
 
@@ -9,17 +12,9 @@ export default function Companies() {
       <HeaderCompanies />
       <IntroductionCompany/>
       <CompanySlides/>
-      <div className="mb-96 md:mb-72  bg-green-500 ">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, inventore debitis? Et alias debitis natus nobis labore ullam nihil nisi dolores, neque possimus. Fugiat laudantium nobis nam. Ab, eligendi sapiente.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, inventore debitis? Et alias debitis natus nobis labore ullam nihil nisi dolores, neque possimus. Fugiat laudantium nobis nam. Ab, eligendi sapiente.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, inventore debitis? Et alias debitis natus nobis labore ullam nihil nisi dolores, neque possimus. Fugiat laudantium nobis nam. Ab, eligendi sapiente.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, inventore debitis? Et alias debitis natus nobis labore ullam nihil nisi dolores, neque possimus. Fugiat laudantium nobis nam. Ab, eligendi sapiente.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, inventore debitis? Et alias debitis natus nobis labore ullam nihil nisi dolores, neque possimus. Fugiat laudantium nobis nam. Ab, eligendi sapiente.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, inventore debitis? Et alias debitis natus nobis labore ullam nihil nisi dolores, neque possimus. Fugiat laudantium nobis nam. Ab, eligendi sapiente.</p>
-        <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, inventore debitis? Et alias debitis natus nobis labore ullam nihil nisi dolores, neque possimus. Fugiat laudantium nobis nam. Ab, eligendi sapiente.</p>
-      </div>
-
-
+      <BenefitsCorporateOrder/>
+       <ChooseMealPlan/>
+       <CorporateOrderApplication/>
       <Footer />
     </div>
   )

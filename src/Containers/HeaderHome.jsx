@@ -27,7 +27,9 @@ export default function Header() {
               مامان‌پز با غذاهای خانگی و سالم یک ناهار کاری فراموش نشدنی را برای
               شما رقم می‌زند.
             </p>
-            <Button text="نهار شرکتی میخوام" />
+            <Button src="/companies">
+               نهار شرکتی میخواهم
+            </Button>
           </div>
         </div>
    

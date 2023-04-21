@@ -35,14 +35,14 @@ export default function HowToOrder() {
 "
         />
       </div>
-        
-        <div className="flex items-center justify-center mt-20">
-           <Button text="اطلاعات بیشتر"/>
-        </div>
-           
-        <div className=" max-w-[1100px] m-auto">
-           <Border/>
-        </div>
+
+      <div className="flex items-center justify-center mt-20">
+        <Button src="/companies">اطلاعات بیشتر</Button>
+      </div>
+
+      <div className=" max-w-[1100px] m-auto">
+        <Border />
+      </div>
     </div>
   );
 }

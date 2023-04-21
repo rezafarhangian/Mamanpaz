@@ -10,7 +10,7 @@ import Border from "../Components/Border";
 
 export default function CompanySlides() {
   return (
-    <div className="container p-2 mb-40">
+    <div className="container p-2 mb-28">
       <div className="text-center mb-16">
         <h2 className=" font-bold text-2xl xl:text-3xl">تنوع غذایی</h2>
         <p className="max-w-[700px] m-auto mt-7 text-sm">
@@ -27,7 +27,6 @@ export default function CompanySlides() {
           breakpoints={{
             768: {
               slidesPerView: 3,
-              //   slidesPerGroup: 3,
             },
           }}
           pagination={{

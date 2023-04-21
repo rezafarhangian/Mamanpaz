@@ -52,7 +52,7 @@ export default function HeaderCompanies() {
   });
 
   return (
-    <div>
+    <div id="reza">
       <NavbarDesktop />
       <NavbarMobile />
       <div className="container p-2 mb-20 ">
