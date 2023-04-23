@@ -6,6 +6,8 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import Border from "../Components/Border"
 import { IoMdArrowDropdown } from "react-icons/io";
+import Swal from "sweetalert2";
+
 
 
 const initialValues = {
@@ -16,8 +18,29 @@ const initialValues = {
   number: "",
 };
 
-const onSubmit = (values) => {
-  console.log(values);
+const onSubmit = (values, {resetForm}) => {
+  Swal.fire({
+    title: "کابر گرامی",
+    text: "آیا از ارسال اطلاعات اطمینان دارید؟",
+    icon: "question",
+    showCancelButton: true,
+    confirmButtonColor: "#00bd10",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "بله",
+    cancelButtonText: "نه",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire({
+        title: "اطلاعات با موفقیت ارسال شد",
+        text: "پرسنل ما در اسرع وقت با شما تماس حاصل می فرمایند",
+        icon: "success",
+        confirmButtonText: "باشه",
+      }).then(
+        
+        resetForm(),
+      );
+    }
+  });
 };
 
 const validationSchema = yup.object({
@@ -74,7 +97,7 @@ export default function HeaderCompanies() {
 
                 <button
                   type="submit"
-                  disabled={!formik.isValid}
+                  disabled={!(formik.isValid && formik.dirty)}
                   className="bg-mamanpaz text-white p-2 rounded-lg w-full mt-4 disabled:bg-gray-300"
                 >
                   ارسال اطلاعات
@@ -92,3 +115,6 @@ export default function HeaderCompanies() {
     </div>
   );
 }
+
+
+// Add sweetAlert2  library to the project
