@@ -80,7 +80,7 @@ export default function NavbarMobile() {
           <li className=" mb-2  rounded ">
             <Link
               className=" block  py-2  "
-              to="/userComments"
+              to="/chefRegistration"
             >
               آشپزی در مامان پز
             </Link>

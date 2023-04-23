@@ -68,7 +68,7 @@ export default function HeaderCompanies() {
               <form onSubmit={formik.handleSubmit}>
                 <Input name="name" formik={formik} label="نام" />
                 <Input name="mobile" formik={formik} label="موبایل" />
-                <Input name="tel" formik={formik} label="تلفن" />
+                <Input name="tel" formik={formik} label="تلفن ثابت" />
                 <Input name="company" formik={formik} label="نام شرکت" />
                 <Input name="number" formik={formik} label="تعداد پرسنل" />
 
