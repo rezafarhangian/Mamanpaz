@@ -96,7 +96,7 @@ export default function NavbarMobile() {
           <li className=" rounded ">
             <Link
               className=" block py-2   "
-              to="/aboutUs"
+              to="/aboutus"
             >
               درباره ما
             </Link>

@@ -10,7 +10,7 @@ import { FiTwitter } from "react-icons/fi";
 export default function Footer() {
   return (
     <div className="bg-slate-200 absolute bottom-0 left-0 right-0 h-[530px] md:h-[350px] ">
-      <div className="bg-[#cfd8dc] p-1  md:py-4">
+      <div className="bg-[#cfd8dc] p-1  md:py-4 text-gray-600">
         <div className="container flex items-center justify-center md:justify-evenly xl:justify-between md:pr-9 md:pl-5 max-w-[1000px]  ">
           <p className="hidden md:block">مامان‌پز پشتیبان شماست!</p>
           <div className="flex flex-col md:flex-row items-center gap-3 md:gap-6">
