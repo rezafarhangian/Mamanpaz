@@ -6,7 +6,7 @@ import ChefRegistrationForm from "./ChefRegistrationForm";
 
 export default function HeaderChefRegistration() {
   return (
-    <div>
+    <div className="mb-10">
       <NavbarDesktop />
       <NavbarMobile />
 

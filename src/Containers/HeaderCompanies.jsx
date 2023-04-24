@@ -116,5 +116,3 @@ export default function HeaderCompanies() {
   );
 }
 
-
-// Add sweetAlert2  library to the project

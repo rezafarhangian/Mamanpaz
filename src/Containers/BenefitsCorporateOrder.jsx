@@ -17,6 +17,7 @@ export default function BenefitsCorporateOrder() {
       </div>
       <div className=" max-w-[990px] mr-auto mb-20">
         <SiteBenefitsbox
+        order={true}
           title="حساب و کتاب شفاف"
           text="در سفارش از مامان‌پز نگران دغدغه‌هایی مثل فاکتور و اسناد مالی نباشید. ما براتون فاکتور رسمی صادر می‌کنیم و گزارش‌های شفاف مالی در زمان‌های مختلف ارایه می‌کنیم تا شما با خیال راحت و کمترین چالش مالی بتونید سفارش بدید."
           img="./img/BenefitsCorporateOrder/img2.jpeg"
