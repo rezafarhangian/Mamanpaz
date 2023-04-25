@@ -8,7 +8,8 @@ module.exports = {
     extend: {
       colors: {
         "mamanpaz" : "#ff5851",
-      }
+      },
+      
     },
     container: {
       center: true,
