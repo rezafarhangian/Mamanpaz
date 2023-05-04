@@ -8,7 +8,7 @@ import { useCartActions, useCart } from "../Context/CartProvider";
 export default function FoodBox({ item }) {
   const dispatch = useCartActions();
   const { cart } = useCart();
-    const { total } = useCart();
+  const { total } = useCart();
 
   const addFoodToCart = (Food) => {
     dispatch({ type: "ADD_TO_CART", payload: Food });
@@ -17,20 +17,7 @@ export default function FoodBox({ item }) {
     dispatch({ type: "MINUS_PRODUCT", payload: Food });
   };
 
-    useEffect(() => {
-      const data = JSON.parse(localStorage.getItem('FOOD'))
-      if (data) {
-          dispatch({ type: 'LOAD_CART', payload: data });
-      }
-    }, []);
-
-  useEffect(() => {
-    if (cart.length !== 0) {
-      localStorage.setItem("FOOD", JSON.stringify(cart));
-    }
-  }, [cart]);
-
-    console.log(cart);
+   
   return (
     <div className="bg-white rounded-md overflow-hidden m-2 relative shadow-[rgba(99,99,99,0.2)_0px_2px_8px_0px]">
       <div className="w-[290px] h-[190px] ">
