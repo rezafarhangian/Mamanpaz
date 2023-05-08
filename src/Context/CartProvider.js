@@ -12,7 +12,7 @@ const initialState = {
 
 export default function CartProvider({ children }) {
 
-    const [cart, dispatch] = useReducer(CartReducer,  JSON.parse(localStorage.getItem("FOOD")) ||initialState)
+    const [cart, dispatch] = useReducer(CartReducer, JSON.parse(localStorage.getItem("FOOD")) || initialState)
 
     useEffect(() => {
         localStorage.setItem("FOOD", JSON.stringify(cart));

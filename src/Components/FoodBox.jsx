@@ -8,7 +8,6 @@ import { useCartActions, useCart } from "../Context/CartProvider";
 export default function FoodBox({ item }) {
   const dispatch = useCartActions();
   const { cart } = useCart();
-  const { total } = useCart();
 
   const addFoodToCart = (Food) => {
     dispatch({ type: "ADD_TO_CART", payload: Food });

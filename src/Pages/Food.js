@@ -1,3 +1,4 @@
+import { useState } from "react"
 import NavbarDesktop from "../Components/NavbarDesktop"
 import NavbarMobile from "../Components/NavbarMobile"
 import FilterFood from '../Containers/FilterFood'
@@ -9,6 +10,8 @@ import Footer from "../Components/Footer"
 
 
 export default function Food() {
+    const [choiceFood, setChoiceFood] = useState("")
+    const [sort, setSort] = useState("گران")
     return (
         <div>
             <NavbarDesktop />
@@ -16,7 +19,7 @@ export default function Food() {
 
             <div style={{ backgroundImage: "url('./img/bg-food.jpg')" }} className=" mt-16 pb-96 md:pb-72">
                 <div className="container p-2 ">
-                    <FilterFood />
+                    <FilterFood setChoiceFood={setChoiceFood} setSort={setSort}/>
                     <Link to="/companies">
 
                         <div className='max-w-[1000px] m-auto mt-10'>
@@ -24,7 +27,7 @@ export default function Food() {
                         </div>
                     </Link>
                     <div>
-                        <Pagination number={6}/>
+                        <Pagination choiceFood={choiceFood} sort={sort} number={6}/>
                     </div>
                 </div>
             </div>

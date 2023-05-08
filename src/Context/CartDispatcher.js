@@ -1,4 +1,4 @@
-
+import Data from "../Data/foods"
 const CartReducer = (state, action) => {
     switch (action.type) {
 
@@ -39,9 +39,8 @@ const CartReducer = (state, action) => {
             }
         }
 
-        case "LOAD_CART": {
-          return  { cart : action.payload}
-        }
+       
+
 
         default:
             return state
