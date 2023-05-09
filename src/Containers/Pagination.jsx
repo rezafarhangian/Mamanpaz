@@ -69,3 +69,5 @@ export default function Pagination({ number, choiceFood, sort }) {
     </div>
   );
 }
+
+

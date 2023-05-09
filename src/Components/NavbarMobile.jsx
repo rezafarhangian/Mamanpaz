@@ -105,7 +105,7 @@ export default function NavbarMobile() {
          
          <div className="flex justify-between gap-2 mt-8 px-4 mb-9">
           <button className="bg-white w-24 py-1 border rounded-lg cursor-pointer">
-            <Link to="/">ورود</Link>
+            <Link to="/login">ورود</Link>
           </button>
           <button className="bg-white w-24 py-1 border rounded-lg cursor-pointer">
             <Link to="/">ثبت نام</Link>

@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Navbar() {
   return (
@@ -24,7 +24,7 @@ export default function Navbar() {
               </NavLink>
             </li>
             <li className="mr-5 hover:text-mamanpaz">
-            <NavLink
+              <NavLink
                 to="/chefRegistration"
                 className={({ isActive }) =>
                   isActive ? "text-mamanpaz" : "text-black"
@@ -34,7 +34,7 @@ export default function Navbar() {
               </NavLink>
             </li>
             <li className="mr-5 hover:text-mamanpaz">
-            <NavLink
+              <NavLink
                 to="/food"
                 className={({ isActive }) =>
                   isActive ? "text-mamanpaz" : "text-black"
@@ -44,7 +44,7 @@ export default function Navbar() {
               </NavLink>
             </li>
             <li className="mr-5 hover:text-mamanpaz">
-            <NavLink
+              <NavLink
                 to="/aboutus"
                 className={({ isActive }) =>
                   isActive ? "text-mamanpaz" : "text-black"
@@ -56,9 +56,11 @@ export default function Navbar() {
           </ul>
         </div>
         <div>
-          <button className="bg-mamanpaz text-white outline-0 rounded-lg py-2 px-5 font-bold">
-            ورود / ثبت نام
-          </button>
+          <Link to="/login">
+            <button className="bg-mamanpaz text-white outline-0 rounded-lg py-2 px-5 font-bold">
+              ورود / ثبت نام
+            </button>
+          </Link>
         </div>
       </div>
     </div>
