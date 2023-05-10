@@ -4,6 +4,7 @@ import Companies from "./Pages/Companies"
 import ChefRegistration from "./Pages/ChefRegistration"
 import Food from "./Pages/Food"
 import Login from "./Pages/Login"
+import Register from "./Pages/Register"
 
 
 
@@ -15,6 +16,7 @@ const routes = [
     { path: '/chefRegistration', element: <ChefRegistration/> },
     { path: '/food', element: <Food/> },
     { path: '/login', element: <Login/> },
+    { path: '/register', element: <Register/> },
 ]
 
 export default routes

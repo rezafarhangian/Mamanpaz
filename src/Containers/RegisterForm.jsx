@@ -1,28 +1,27 @@
 import { useState } from "react";
-import Input from "../Components/Input";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import Swal from "sweetalert2";
+import Input from "../Components/Input";
 import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import { useAuthActions } from "../Context/AuthProvider";
 
-//========== Save form data ==========
 
-const person = {
-  name: "علی احمدی",
-  phone: "09125552244",
-  password: "12345678",
-};
+
 
 const initialValues = {
+  fullname: "",
   phonenumber: "",
   password: "",
+  confirmPassword: "",
 };
 
 // ============== Validation of inputs ===============
 
 const validationSchema = yup.object({
+  fullname: yup
+    .string()
+    .required("این فیلد الزامی است")
+    .matches(/^[\u0600-\u06FF\s]+$/, "فقط حروف فارسی مجاز هستند"),
   phonenumber: yup
     .string()
     .matches(/^(09)\d{9}$/, "شماره تلفن باید با 09 شروع شده و 11 رقم باشد")
@@ -30,48 +29,19 @@ const validationSchema = yup.object({
 
   password: yup
     .string()
-    .required("پسورد الزامی است")
-    .matches(/^[0-9]{8}$/, "رمز عبور باید ۸ رقم باشد و تنها شامل اعداد باشد"),
+    .required("رمز عبور اجباری است")
+    .max(8, "رمز عبور باید  8 رقم باشد")
+    .matches(/^[0-9]*$/, "رمز عبور باید فقط شامل اعداد باشد"),
+  confirmPassword: yup
+    .string()
+    .oneOf([yup.ref("password"), null], "رمز عبور همخوانی ندارد")
+    .required("تکرار رمز عبور اجباری است"),
 });
 
-export default function LoginForm() {
+export default function RegisterForm() {
   const [showPassword, setShowPassword] = useState(false);
-  const [showError, setShowError] = useState(false);
-
-  const setAuth = useAuthActions();
-  const navigate = useNavigate();
-
-  const onSubmit = (values, { resetForm }) => {
-
-    if (
-      values.phonenumber === person.phone &&
-      values.password === person.password
-    ) {
-      setShowError(false);
-      setAuth(person);
-
-      const Toast = Swal.mixin({
-        toast: true,
-        position: "top",
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-          toast.addEventListener("mouseenter", Swal.stopTimer);
-          toast.addEventListener("mouseleave", Swal.resumeTimer);
-        },
-      });
-
-      Toast.fire({
-        icon: "success",
-        title: "با موفقیت وارد شدید.",
-      }).then(navigate("/"));
-      
-
-    } else {
-      setShowError(true);
-    }
-  };
+  const [showrepeatpassword, setShowrepeatpassword] = useState(false);
+  const onSubmit = (values, { resetForm }) => {};
 
   const formik = useFormik({
     initialValues,
@@ -85,7 +55,8 @@ export default function LoginForm() {
       onSubmit={formik.handleSubmit}
       className="max-w-[300px] m-auto  shadow-[rgba(99,99,99,0.2)_0px_2px_8px_0px] rounded-lg p-3"
     >
-      <h2 className="text-center font-bold my-3">ورود به حساب کاربری</h2>
+      <h2 className="text-center font-bold my-3">ثبت نام در مامان پز</h2>
+      <Input name="fullname" formik={formik} label="نام و نام خانوادگی" />
       <Input name="phonenumber" formik={formik} label="شماره همراه" />
 
       <div className="relative">
@@ -98,7 +69,6 @@ export default function LoginForm() {
               رمز عبور
             </label>
 
-            <div></div>
             <input
               className={`${
                 formik.errors.password && formik.touched.password
@@ -117,6 +87,7 @@ export default function LoginForm() {
             </p>
           )}
         </div>
+
         <button
           onClick={() => setShowPassword(!showPassword)}
           type="button"
@@ -129,28 +100,62 @@ export default function LoginForm() {
           )}
         </button>
       </div>
-      <p
-        className={`${
-          showError ? "visible" : "invisible"
-        } text-center text-sm text-red-600  `}
-      >
-        اطلاعات وارد شده صحیح نمیباشد
-      </p>
+      <div className="relative">
+        <div className=" h-[85px]">
+          <div>
+            <label
+              className="block text-gray-400 text-xs lg:text-sm "
+              htmlFor=""
+            >
+              تکرار رمز عبور
+            </label>
+
+            <input
+              className={`${
+                formik.errors.confirmPassword && formik.touched.confirmPassword
+                  ? "border-red-500 focus:border-b-red-500"
+                  : "border-gray-300 focus:border-b-gray-700"
+              } outline-0 rounded-lg p-2 border  w-full mt-1 focus:border-b `}
+              type={showrepeatpassword ? "text" : "password"}
+              name="confirmPassword"
+              id="password"
+              {...formik.getFieldProps("confirmPassword")}
+            />
+          </div>
+          {formik.errors.confirmPassword && formik.touched.confirmPassword && (
+            <p className="text-xs pr-1 text-red-500">
+              {formik.errors.confirmPassword}
+            </p>
+          )}
+        </div>
+
+        <button
+          onClick={() => setShowrepeatpassword(!showrepeatpassword)}
+          type="button"
+          className="absolute left-2 top-8 cursor-pointer"
+        >
+          {showrepeatpassword ? (
+            <AiOutlineEye className="text-xl text-gray-600" />
+          ) : (
+            <AiOutlineEyeInvisible className="text-xl text-gray-600" />
+          )}
+        </button>
+      </div>
+
       <button
         type="submit"
         disabled={!(formik.isValid && formik.dirty)}
-        className="bg-mamanpaz text-white p-2 rounded-lg w-full  mb-5 mt-5 disabled:bg-gray-300 "
+        className="bg-mamanpaz text-white p-2 rounded-lg w-full  my-5  disabled:bg-gray-300 "
       >
-        ورود
+        ثبت نام
       </button>
       <div className="flex items-center justify-between mb-2">
         <p className="text-xs text-gray-500">
-          حساب کاربری ندارید؟{" "}
-          <Link to="/register" className="text-blue-700">
-            ثبت نام
+          حساب کاربری دارید؟
+          <Link to="/login" className="text-blue-700 mr-1 text-sm">
+            ورود
           </Link>
         </p>
-        <p className="text-xs text-gray-500 cursor-pointer">فراموشی رمز عبور</p>
       </div>
     </form>
   );

@@ -130,7 +130,7 @@ export default function NavbarMobile() {
               <Link to="/login">ورود</Link>
             </button>
             <button className="bg-white w-24 py-1 border rounded-lg cursor-pointer">
-              <Link to="/">ثبت نام</Link>
+              <Link to="/register">ثبت نام</Link>
             </button>
           </div>
         )}
