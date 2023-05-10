@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import { FiMenu } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import { HiOutlineShoppingCart } from "react-icons/hi";
+import {useCart} from "../Context/CartProvider"
 
 export default function NavbarMobile() {
   const [showMenu, setShowMenu] = useState(false);
-
+  const {cart} = useCart()
 
   useEffect(() => {
     if (showMenu) {
@@ -13,7 +15,6 @@ export default function NavbarMobile() {
     } else {
       document.body.style.overflow = "unset";
     }
-
   }, [showMenu]);
 
   return (
@@ -21,12 +22,20 @@ export default function NavbarMobile() {
       <div className=" md:hidden fixed top-0 h-[70px] z-30 right-0 left-0 bg-white shadow ">
         <div>
           <div className="container p-4 flex items-center justify-between">
-            <div className="flex items-center justify-center">
-              <img
-                className="w-11 mb-"
-                src="./img/logo-brand.png"
-                alt="Logo-mamanpaz"
-              />
+            <div className="flex items-center ">
+              <div className="flex items-center justify-center">
+                <img
+                  className="w-11 mb-"
+                  src="./img/logo-brand.png"
+                  alt="Logo-mamanpaz"
+                />
+              </div>
+              <div className="mr-5 mt-2 relative cursor-pointer">
+                <HiOutlineShoppingCart className="text-3xl" />
+                <span className="absolute -top-[5px] -right-[5px] text-white bg-mamanpaz rounded-full text-xs w-5 h-5 flex items-center justify-center">
+                  {cart.length}
+                </span>
+              </div>
             </div>
             <div htmlFor="my-drawer" className="cursor-pointer">
               <div onClick={() => setShowMenu(true)} className="cursor-pointer">
@@ -78,39 +87,30 @@ export default function NavbarMobile() {
             </Link>
           </li>
           <li className=" mb-2  rounded ">
-            <Link
-              className=" block  py-2  "
-              to="/chefRegistration"
-            >
+            <Link className=" block  py-2  " to="/chefRegistration">
               آشپزی در مامان پز
             </Link>
           </li>
           <li className=" mb-2  rounded ">
-            <Link
-              className=" block  py-2  "
-              to="/food"
-            >
+            <Link className=" block  py-2  " to="/food">
               ثبت سفارش آنلاین
             </Link>
           </li>
           <li className=" rounded ">
-            <Link
-              className=" block py-2   "
-              to="/aboutus"
-            >
+            <Link className=" block py-2   " to="/aboutus">
               درباره ما
             </Link>
           </li>
         </ul>
-         
-         <div className="flex justify-between gap-2 mt-8 px-4 mb-9">
+
+        <div className="flex justify-between gap-2 mt-8 px-4 mb-9">
           <button className="bg-white w-24 py-1 border rounded-lg cursor-pointer">
             <Link to="/login">ورود</Link>
           </button>
           <button className="bg-white w-24 py-1 border rounded-lg cursor-pointer">
             <Link to="/">ثبت نام</Link>
           </button>
-         </div>
+        </div>
       </div>
     </>
   );

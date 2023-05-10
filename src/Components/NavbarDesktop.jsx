@@ -1,6 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
+import {HiOutlineShoppingCart} from "react-icons/hi"
+import {useCart} from "../Context/CartProvider"
+
 
 export default function Navbar() {
+  const {cart} = useCart()
+
+
   return (
     <div className="hidden md:block fixed top-0 right-0 left-0 bg-white z-50  shadow px-4">
       <div className="container flex items-center justify-between ">
@@ -55,12 +61,18 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
-        <div>
-          <Link to="/login">
-            <button className="bg-mamanpaz text-white outline-0 rounded-lg py-2 px-5 font-bold">
-              ورود / ثبت نام
-            </button>
-          </Link>
+        <div className="flex items-center">
+          <div className="ml-10 relative cursor-pointer">
+            <HiOutlineShoppingCart className="text-3xl"/>
+            <span className="absolute -top-[5px] -right-[5px] text-white bg-mamanpaz rounded-full text-xs w-5 h-5 flex items-center justify-center">{cart.length}</span>
+          </div>
+          <div>
+            <Link to="/login">
+              <button className="bg-mamanpaz text-white outline-0 rounded-lg py-2 px-5 font-bold">
+                ورود / ثبت نام
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

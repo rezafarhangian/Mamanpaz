@@ -5,10 +5,12 @@ import * as yup from "yup";
 import Swal from "sweetalert2";
 import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { useAuthActions } from "../Context/AuthProvider";
 
 //========== Save form data ==========
 
 const person = {
+  name: "علی احمدی",
   phone: "09125552244",
   password: "12345678",
 };
@@ -18,8 +20,6 @@ const initialValues = {
   password: "",
 };
 
-//  =============== Submit form data ===============
-
 // ============== Validation of inputs ===============
 
 const validationSchema = yup.object({
@@ -27,11 +27,6 @@ const validationSchema = yup.object({
     .string()
     .matches(/^(09)\d{9}$/, "شماره تلفن باید با 09 شروع شده و 11 رقم باشد")
     .required("شماره تلفن الزامی است"),
-
-  //   password: yup
-  //     .number()
-  //     .typeError("فقط عدد مجاز است")
-  //     .required("این فیلد اجباری است"),
 
   password: yup
     .string()
@@ -43,13 +38,36 @@ export default function LoginForm() {
   const [showPassword, setShowPassword] = useState(false);
   const [showError, setShowError] = useState(false);
 
+  const setAuth = useAuthActions();
+  const navigate = useNavigate();
+
   const onSubmit = (values, { resetForm }) => {
+
     if (
       values.phonenumber === person.phone &&
       values.password === person.password
     ) {
       setShowError(false);
-      console.log("درست");
+      setAuth(person);
+
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
+      });
+
+      Toast.fire({
+        icon: "success",
+        title: "با موفقیت وارد شدید.",
+      }).then(navigate("/"));
+      
+
     } else {
       setShowError(true);
     }
