@@ -3,11 +3,16 @@ import { FiMenu } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { HiOutlineShoppingCart } from "react-icons/hi";
-import {useCart} from "../Context/CartProvider"
+import { useCart } from "../Context/CartProvider";
+import { useAuth, useAuthActions } from "../Context/AuthProvider";
+import { BiLogOut } from "react-icons/bi";
+import { FaUser } from "react-icons/fa";
 
 export default function NavbarMobile() {
   const [showMenu, setShowMenu] = useState(false);
-  const {cart} = useCart()
+  const { cart } = useCart();
+  const auth = useAuth();
+  const setAuth = useAuthActions();
 
   useEffect(() => {
     if (showMenu) {
@@ -16,6 +21,11 @@ export default function NavbarMobile() {
       document.body.style.overflow = "unset";
     }
   }, [showMenu]);
+
+  const logoutUser = () => {
+    localStorage.removeItem("auth");
+    setAuth(null);
+  };
 
   return (
     <>
@@ -63,7 +73,11 @@ export default function NavbarMobile() {
           showMenu ? "right-0" : "-right-80"
         } md:hidden transition-all duration-300 ease-in-out  bottom-0  z-50  bg-white  h-full w-56 overflow-y-auto`}
       >
-        <div className="flex items-center justify-between p-4 border-b-[1px]">
+        <div
+          className={`flex items-center justify-between p-4 ${
+            auth && "border-b-[1px]"
+          }`}
+        >
           <img
             className="w-10"
             src="./img/logo-brand.png"
@@ -74,6 +88,14 @@ export default function NavbarMobile() {
             <AiOutlineCloseCircle className="text-2xl text-Saina" />
           </div>
         </div>
+        {auth && (
+          <div className="px-4 pt-6  flex justify-between borde-b-[1px]">
+            <div className="flex items-center">
+              <FaUser className="text-xl" />
+              <p className="font-bold mr-1">{auth.name}</p>
+            </div>
+          </div>
+        )}
 
         <ul className="pr-4 pt-3 ">
           <li className=" mb-2 rounded   block">
@@ -102,15 +124,25 @@ export default function NavbarMobile() {
             </Link>
           </li>
         </ul>
-
-        <div className="flex justify-between gap-2 mt-8 px-4 mb-9">
-          <button className="bg-white w-24 py-1 border rounded-lg cursor-pointer">
-            <Link to="/login">ورود</Link>
-          </button>
-          <button className="bg-white w-24 py-1 border rounded-lg cursor-pointer">
-            <Link to="/">ثبت نام</Link>
-          </button>
-        </div>
+        {!auth && (
+          <div className="flex justify-between gap-2 mt-8 px-4 mb-9">
+            <button className="bg-white w-24 py-1 border rounded-lg cursor-pointer">
+              <Link to="/login">ورود</Link>
+            </button>
+            <button className="bg-white w-24 py-1 border rounded-lg cursor-pointer">
+              <Link to="/">ثبت نام</Link>
+            </button>
+          </div>
+        )}
+        {auth && (
+          <div
+            onClick={() => logoutUser()}
+            className="flex cursor-default p-4 border-t mt-4"
+          >
+            <p>خروج</p>
+            <BiLogOut className="text-xl mr-1" />
+          </div>
+        )}
       </div>
     </>
   );
