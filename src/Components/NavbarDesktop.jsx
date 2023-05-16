@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { HiOutlineShoppingCart } from "react-icons/hi";
-import { AiOutlineUser } from "react-icons/ai";
 import { BiLogOut } from "react-icons/bi";
+import { FaRegUserCircle } from "react-icons/fa";
 import { useCart } from "../Context/CartProvider";
 import { useAuth, useAuthActions } from "../Context/AuthProvider";
 
@@ -70,17 +70,19 @@ export default function Navbar() {
           </ul>
         </div>
         <div className="flex items-center">
-          <div className="ml-7 relative cursor-pointer">
-            <HiOutlineShoppingCart className="text-3xl" />
-            <span className="absolute -top-[5px] -right-[5px] text-white bg-mamanpaz rounded-full text-xs w-5 h-5 flex items-center justify-center">
-              {cart.length}
-            </span>
-          </div>
+          <Link to="/cart">
+            <div className=" ml-7 relative cursor-pointer">
+              <HiOutlineShoppingCart className="text-3xl" />
+              <span className="absolute -top-[5px] -right-[5px] text-white bg-mamanpaz rounded-full text-xs w-5 h-5 flex items-center justify-center">
+                {cart.length}
+              </span>
+            </div>
+          </Link>
           <div>
             {auth ? (
               <div className="relative group/item  py-5">
                 <div className="flex items-center cursor-pointer group-hover/item:text-mamanpaz">
-                  <AiOutlineUser className="text-3xl" />
+                  <FaRegUserCircle className="text-3xl" />
                   <p className="mr-1 font-bold">{auth.name}</p>
                 </div>
                 <div
@@ -88,7 +90,7 @@ export default function Navbar() {
                   className="absolute hidden group-hover/item:flex -bottom-8 p-2 cursor-pointer  items-center justify-evenly rounded text-center bg-white w-32 shadow-[rgba(99,99,99,0.2)_0px_2px_8px_0px]"
                 >
                   <p>خروج</p>
-                  <BiLogOut className="text-xl"/>
+                  <BiLogOut className="text-xl" />
                 </div>
               </div>
             ) : (

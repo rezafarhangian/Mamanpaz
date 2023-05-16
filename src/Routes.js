@@ -5,6 +5,7 @@ import ChefRegistration from "./Pages/ChefRegistration"
 import Food from "./Pages/Food"
 import Login from "./Pages/Login"
 import Register from "./Pages/Register"
+import Cart from "./Pages/Cart"
 
 
 
@@ -17,6 +18,7 @@ const routes = [
     { path: '/food', element: <Food/> },
     { path: '/login', element: <Login/> },
     { path: '/register', element: <Register/> },
+    { path: '/cart', element: <Cart/> },
 ]
 
 export default routes
