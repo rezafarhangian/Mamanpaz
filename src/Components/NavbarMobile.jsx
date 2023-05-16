@@ -40,12 +40,14 @@ export default function NavbarMobile() {
                   alt="Logo-mamanpaz"
                 />
               </div>
-              <div className="mr-5 mt-2 relative cursor-pointer">
-                <HiOutlineShoppingCart className="text-3xl" />
-                <span className="absolute -top-[5px] -right-[5px] text-white bg-mamanpaz rounded-full text-xs w-5 h-5 flex items-center justify-center">
-                  {cart.length}
-                </span>
-              </div>
+              <Link to="/cart">
+                <div className="mr-5 mt-2 relative cursor-pointer">
+                  <HiOutlineShoppingCart className="text-3xl" />
+                  <span className="absolute -top-[5px] -right-[5px] text-white bg-mamanpaz rounded-full text-xs w-5 h-5 flex items-center justify-center">
+                    {cart.length}
+                  </span>
+                </div>
+              </Link>
             </div>
             <div htmlFor="my-drawer" className="cursor-pointer">
               <div onClick={() => setShowMenu(true)} className="cursor-pointer">
