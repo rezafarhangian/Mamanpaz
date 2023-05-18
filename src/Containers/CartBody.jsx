@@ -2,15 +2,21 @@ import React, { useState } from "react";
 import { TiTick } from "react-icons/ti";
 import ChoiceOfFood from "./ChoiceOfFood";
 import AddressVerification from "./AddressVerification";
+import CheckTheOrder from "./CheckTheOrder";
+
+
 
 export default function CartBody() {
   const [activeStep, setActiveStep] = useState(1);
+  const [order, setOrder] = useState(false);
 
   const [address, setAddress] = useState({
     province: "",
     city: "",
     street: "",
   });
+
+  
 
 
   return (
@@ -20,8 +26,6 @@ export default function CartBody() {
         {/* ============ start stepper ============ */}
 
         <div className="">
-          {/* <div className="flex flex-col justify-center items-center gap-16"> */}
-
           <ul className="flex justify-between w-[290px] md:w-[400px] mt-4 m-auto">
             <li className="flex flex-col items-center justify-center">
               <span className="font-bold text-mamanpaz ">غذاها</span>
@@ -62,7 +66,7 @@ export default function CartBody() {
                     : "bg-gray-300 after:bg-gray-300"
                 }  relative after:left-0 after:-z-10 after:absolute after:content-[""] after:top-[6px] after:w-36 after:md:w-48 after:h-1 `}
               >
-                {activeStep > 3 && <TiTick className="text-white" />}
+                {order && <TiTick className="text-white" />}
               </span>
             </li>
           </ul>
@@ -71,7 +75,7 @@ export default function CartBody() {
 
           {activeStep === 1 && (
             <>
-             <ChoiceOfFood setActiveStep={setActiveStep}/>
+              <ChoiceOfFood setActiveStep={setActiveStep} />
             </>
           )}
 
@@ -79,9 +83,20 @@ export default function CartBody() {
 
           {activeStep === 2 && (
             <>
-            <AddressVerification setActiveStep={setActiveStep} address={address} setAddress={setAddress}/>
+              <AddressVerification
+                setActiveStep={setActiveStep}
+                address={address}
+                setAddress={setAddress}
+              />
             </>
           )}
+          {activeStep === 3 && (
+            <>
+              <CheckTheOrder address={address} setActiveStep={setActiveStep} setOrder={setOrder}/>
+            </>
+          )}
+
+        
         </div>
       </div>
     </div>

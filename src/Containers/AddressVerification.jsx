@@ -39,7 +39,6 @@ export default function AddressVerification({ setActiveStep, setAddress, address
       (city) => city.province_id === selectedProvince.id
     );
 
-    console.log(filteredCities);
     const cityOptions = filteredCities.reduce((options, city) => {
       options[city.slug] = city.name;
       return options;
@@ -144,7 +143,8 @@ export default function AddressVerification({ setActiveStep, setAddress, address
         </button>
         <button
           onClick={() => setActiveStep(3)}
-          className="flex items-center bg-mamanpaz text-white outline-0 py-[3px] px-4 rounded-sm m-auto mt-7 mb-3"
+          disabled={!address.province}
+          className="flex items-center disabled:bg-gray-400 bg-mamanpaz text-white outline-0 py-[3px] px-4 rounded-sm m-auto mt-7 mb-3"
         >
           <span>بعدی</span>
           <MdArrowBackIosNew className="text-lg mr-2" />
