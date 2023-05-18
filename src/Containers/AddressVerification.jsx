@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import provinces from "../Data/provinces";
 import cities from "../Data/cities";
@@ -6,7 +6,16 @@ import { FaPlus } from "react-icons/fa";
 import { FiEdit } from "react-icons/fi";
 import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 
-export default function AddressVerification({ setActiveStep, setAddress, address }) {
+export default function AddressVerification({
+  setActiveStep,
+  setAddress,
+  address,
+  setOrder,
+}) {
+   
+  useEffect(() =>{
+    setOrder(false);
+  })
 
   const handleIconClick = async () => {
     const provinceResult = await Swal.fire({
@@ -87,7 +96,7 @@ export default function AddressVerification({ setActiveStep, setAddress, address
       title: "آدرس ذخیره شد",
       text: `استان: ${province}، شهر: ${city}، آدرس: ${street}`,
       confirmButtonText: "باشه",
-      confirmButtonColor : "#14b309",
+      confirmButtonColor: "#14b309",
     });
   };
 
@@ -133,7 +142,6 @@ export default function AddressVerification({ setActiveStep, setAddress, address
       </button>
 
       <div className="flex items-center  w-52 m-auto">
-      
         <button
           onClick={() => setActiveStep(1)}
           className="flex items-center bg-mamanpaz text-white outline-0 py-[3px] px-4 rounded-sm m-auto mt-7 mb-3"

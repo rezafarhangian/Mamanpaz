@@ -7,9 +7,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "mamanpaz" : "#ff5851",
+        "mamanpaz": "#ff5851",
       },
-      
+
     },
     container: {
       center: true,
@@ -18,11 +18,14 @@ module.exports = {
     fontFamily: {
       vazir: ["VazirFont"],
     },
-  
 
-    
+
+
   },
   plugins: [
+    require('tailwind-scrollbar'),
+
   ],
+ 
 }
 
