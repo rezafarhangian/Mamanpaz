@@ -116,7 +116,7 @@ export default function NavbarMobile() {
             </Link>
           </li>
           <li className=" mb-2  rounded ">
-            <Link className=" block  py-2  " to="/food">
+            <Link className=" block  py-2  " to="/foods">
               ثبت سفارش آنلاین
             </Link>
           </li>

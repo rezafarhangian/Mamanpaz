@@ -8,9 +8,9 @@ export default function IntroductionBox({ img, desc, text }) {
       </div>
       <p className="font-bold mt-8">{desc}</p>
       {text && (
-        <di className="h-24">
+        <div className="h-24">
           <p className="max-w-[300px]  text-center text-sm mt-3">{text}</p>
-        </di>
+        </div>
       )}
     </div>
   );

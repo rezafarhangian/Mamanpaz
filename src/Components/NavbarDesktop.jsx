@@ -49,7 +49,7 @@ export default function Navbar() {
             </li>
             <li className="mr-5 hover:text-mamanpaz">
               <NavLink
-                to="/food"
+                to="/foods"
                 className={({ isActive }) =>
                   isActive ? "text-mamanpaz" : "text-black"
                 }

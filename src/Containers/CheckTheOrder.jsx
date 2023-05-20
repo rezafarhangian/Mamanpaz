@@ -31,6 +31,7 @@ export default function CheckTheOrder({ address, setActiveStep, setOrder }) {
           title: "سفارش شما با موفقیت ثبت شد",
           text: "منتظر دریافت پیام جهت پرداخت هزینه باشید.",
           icon: "success",
+          confirmButtonText: "باشه",
         });
       }
     });
