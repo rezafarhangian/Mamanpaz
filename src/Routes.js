@@ -20,7 +20,7 @@ const routes = [
     { path: '/login', element: <Login/> },
     { path: '/register', element: <Register/> },
     { path: '/cart', element: <Cart/> },
-    { path: '/food', element: <Food/> },
+    { path: '/food/:id', element: <Food/> },
 ]
 
 export default routes

@@ -4,6 +4,7 @@ import { HiUser } from "react-icons/hi";
 import { BiPlusMedical } from "react-icons/bi";
 import { FaMinus } from "react-icons/fa";
 import { useCartActions, useCart } from "../Context/CartProvider";
+import { Link } from "react-router-dom";
 
 export default function FoodBox({ item }) {
   const dispatch = useCartActions();
@@ -16,18 +17,21 @@ export default function FoodBox({ item }) {
     dispatch({ type: "MINUS_PRODUCT", payload: Food });
   };
 
-   
   return (
     <div className="bg-white rounded-md overflow-hidden m-2 relative shadow-[rgba(99,99,99,0.2)_0px_2px_8px_0px]">
-      <div className="w-[290px] h-[190px] ">
-        <img
-          className="w-full h-full object-cover"
-          src={item.images[0].img}
-          alt=""
-        />
-      </div>
+      <Link to={`/food/${item.id}`}>
+        <div className="w-[290px] h-[190px] ">
+          <img
+            className="w-full h-full object-cover"
+            src={item.images[0].img}
+            alt=""
+          />
+        </div>
+      </Link>
       <div className="flex justify-between p-2 mt-5">
+        <Link to={`/food/${item.id}`}>
         <p className="w-40 truncate font-bold">{item.title}</p>
+        </Link>
         <p className="font-bold">
           {item.price.toLocaleString("fa-IR")}{" "}
           <span className="text-xs">تومان</span>
