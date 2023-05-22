@@ -36,7 +36,7 @@ export default function NavbarMobile() {
               <div className="flex items-center justify-center">
                 <img
                   className="w-11 mb-"
-                  src="./img/logo-brand.png"
+                  src="/img/logo-brand.png"
                   alt="Logo-mamanpaz"
                 />
               </div>
@@ -82,7 +82,7 @@ export default function NavbarMobile() {
         >
           <img
             className="w-10"
-            src="./img/logo-brand.png"
+            src="/img/logo-brand.png"
             alt="logo mamanpaz"
           />
 

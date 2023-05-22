@@ -22,7 +22,7 @@ export default function Navbar() {
           <NavLink to="/">
             <img
               className="w-11 mb-4"
-              src="./img/logo-brand.png"
+              src="/img/logo-brand.png"
               alt="Logo-mamanpaz"
             />
           </NavLink>

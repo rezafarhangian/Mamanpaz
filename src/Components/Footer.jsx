@@ -53,7 +53,7 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-center gap-4 my-8 ">
           <img
             className="w-[192px]"
-            src="./img/Footer/mamanpaz_logo.png"
+            src="/img/Footer/mamanpaz_logo.png"
             alt="mamanpaz_logo"
           />
           <div className="w-[150px]">
