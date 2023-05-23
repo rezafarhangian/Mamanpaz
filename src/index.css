@@ -38,3 +38,9 @@ body {
 
 
 
+.border-1\/2 {
+  border-color: currentcolor transparent currentcolor transparent;
+}
+.border-1\/4 {
+  border-color: currentcolor transparent transparent transparent;
+}

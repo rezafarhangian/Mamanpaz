@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { AiFillStar } from "react-icons/ai";
 import { HiUser } from "react-icons/hi";
 import { BiPlusMedical } from "react-icons/bi";
@@ -7,6 +7,8 @@ import { useCartActions, useCart } from "../Context/CartProvider";
 import { Link } from "react-router-dom";
 
 export default function FoodBox({ item }) {
+  const [loadPhoto, setLoadPhoto] = useState(false);
+
   const dispatch = useCartActions();
   const { cart } = useCart();
 
@@ -17,20 +19,29 @@ export default function FoodBox({ item }) {
     dispatch({ type: "MINUS_PRODUCT", payload: Food });
   };
 
+
   return (
     <div className="bg-white rounded-md overflow-hidden m-2 relative shadow-[rgba(99,99,99,0.2)_0px_2px_8px_0px]">
       <Link to={`/food/${item.id}`}>
-        <div className="w-[290px] h-[190px] ">
+        <div className="w-[290px] h-[190px] relative  border-b">
+          {!loadPhoto && (
+            <div className="flex items-center justify-center w-full absolute top-2/4  ">
+              <div className="relative w-6 h-6 border-4 border-white rounded-full animate-spin mx-8">
+                <div className="border-1/2 absolute -inset-2 border-4 text-gray-500 rounded-full"></div>
+              </div>
+            </div>
+          )}
           <img
-            className="w-full h-full object-cover"
+            className={`w-full h-full object-cover  `}
             src={item.images[0].img}
-            alt=""
+            onLoad={() => setLoadPhoto(true)}
           />
+
         </div>
       </Link>
       <div className="flex justify-between p-2 mt-5">
         <Link to={`/food/${item.id}`}>
-        <p className="w-40 truncate font-bold">{item.title}</p>
+          <p className="w-40 truncate font-bold">{item.title}</p>
         </Link>
         <p className="font-bold">
           {item.price.toLocaleString("fa-IR")}{" "}
